@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Form & Content Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Assignment: HTML5 Content & Forms</h1>
+        <p>This page demonstrates the use of semantic HTML5 elements for content and a fully-featured, validated form.</p>
+
+        <section>
+            <h2>Lists & Tables</h2>
+            <p>Below is an ordered list of key features and a table detailing some data.</p>
+            
+            <h3>Key Features</h3>
+            <ol>
+                <li>Semantic HTML5 structure</li>
+                <li>Accessible content with lists and tables</li>
+                <li>Responsive media embedding</li>
+                <li>Native HTML5 form validation</li>
+                <li>User-friendly form design</li>
+            </ol>
+            
+            <h3>Product Data</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laptop X1</td>
+                        <td>Electronics</td>
+                        <td>$1200.00</td>
+                        <td>In Stock</td>
+                    </tr>
+                    <tr>
+                        <td>Office Chair Pro</td>
+                        <td>Furniture</td>
+                        <td>$250.00</td>
+                        <td>Out of Stock</td>
+                    </tr>
+                    <tr>
+                        <td>Wireless Mouse</td>
+                        <td>Accessories</td>
+                        <td>$35.50</td>
+                        <td>In Stock</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <h2>Media Showcase</h2>
+            <p>Here you can see a sample image and an audio file embedded directly into the page.</p>
+            
+            <h3>Image</h3>
+            <figure>
+                <img src="./media/coding.jpeg" alt="A person coding during the night.">
+                <figcaption>Figure 1: A student coding during the night.</figcaption>
+            </figure>
+
+            <h3>Audio</h3>
+            <audio controls>
+                <source src="./media/not_easy_but_simple.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+        
+        <section>
+            <h2>Registration Form</h2>
+            <p>Complete the form below to register. All fields are required unless otherwise noted.</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>User Information</legend>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a unique username" required minlength="4">
+                    
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required autocomplete="email">
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Must be at least 8 characters" required minlength="8">
+                    
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="\d{3}-\d{3}-\d{4}">
+                    <small>Format: 123-456-7890 (optional)</small>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Profile Details</legend>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                    
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="18" max="99" required>
+                    <small>Must be 18 years or older.</small>
+                    
+                    <label for="website">Personal Website (Optional):</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com" autocomplete="url">
+                    
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio" rows="5" placeholder="Tell us a little about yourself (optional)." readonly>This text field is read-only.</textarea>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Subscription Preferences</legend>
+                    <label for="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        Subscribe to our newsletter
+                    </label>
+                </fieldset>
+                
+                <input type="submit" value="Register Now">
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

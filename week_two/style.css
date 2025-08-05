@@ -1,0 +1,63 @@
+ body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 2em;
+            color: #333;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 1em;
+            margin-bottom: 1.5em;
+        }
+        legend {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 1em;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input:invalid {
+            border: 2px solid red;
+        }

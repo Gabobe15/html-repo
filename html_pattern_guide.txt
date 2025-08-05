@@ -1,0 +1,97 @@
+HTML Pattern Attribute Guide
+============================
+
+The `pattern` attribute in HTML allows you to validate user input using regular expressions (regex) directly in an input field, without needing JavaScript.
+
+--------------------------------------------------
+Basic Syntax:
+--------------------------------------------------
+<input type="text" pattern="your-regex-here" title="Description of the pattern">
+
+--------------------------------------------------
+Why Use pattern?
+--------------------------------------------------
+- Validates user input on the client side
+- Helps prevent invalid form submissions
+- Enhances form usability and accessibility
+
+--------------------------------------------------
+Common Examples:
+--------------------------------------------------
+
+1. Exactly 5 Digits (e.g., ZIP Code)
+------------------------------------
+<input type="text" name="zip" pattern="[0-9]{5}" title="Enter a 5-digit zip code">
+
+2. Letters Only (no numbers or symbols)
+----------------------------------------
+<input type="text" pattern="[A-Za-z]+" title="Only letters allowed">
+
+3. Letters and Spaces (e.g., Full Name)
+----------------------------------------
+<input type="text" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
+
+4. Kenyan Phone Number (Starts with 07 + 8 digits)
+--------------------------------------------------
+<input type="tel" pattern="07[0-9]{8}" title="Enter a valid phone number starting with 07">
+
+5. Email Format (custom regex — use type="email" instead)
+----------------------------------------------------------
+<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email">
+
+6. Password with Rules (1 uppercase, 1 lowercase, 1 number, min 8 chars)
+------------------------------------------------------------------------
+<input type="password" 
+       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+       title="Must contain at least 1 uppercase, 1 lowercase, 1 number, and be at least 8 characters long">
+
+--------------------------------------------------
+Regex Quick Reference:
+--------------------------------------------------
+
+Character Classes:
+- [abc]      - Matches a, b, or c
+- [^abc]     - Not a, b, or c
+- [A-Za-z]   - Any letter
+- [0-9] or \d - Digits
+- \s        - Whitespace
+
+Quantifiers:
+- {n}        - Exactly n times
+- {n,}       - At least n times
+- {n,m}      - Between n and m times
+- +          - One or more
+- *          - Zero or more
+- ?          - Zero or one
+
+Anchors and Groups:
+- ^          - Start of string
+- $          - End of string
+- ()         - Group expressions
+- |          - OR
+
+--------------------------------------------------
+Best Practices:
+--------------------------------------------------
+- Always include the `title` attribute to guide users.
+- Use specific input types (e.g. `email`, `tel`) before relying on `pattern`.
+- Combine with `required` to make sure the field isn't empty.
+
+--------------------------------------------------
+Example Full Form with Pattern Validations:
+--------------------------------------------------
+<form>
+  <label for="zip">ZIP Code:</label>
+  <input type="text" id="zip" name="zip" pattern="[0-9]{5}" required title="Enter a 5-digit ZIP code">
+
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" required title="Enter your full name">
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" pattern="07[0-9]{8}" required title="Enter phone number starting with 07">
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required title="At least 1 uppercase, 1 lowercase, 1 number, min 8 characters">
+
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,8 @@
+pattern: Matches a specific regex pattern.
+<input type="text" name="zip" pattern="[0-9]{5}" title="Enter a 5-digit zip code">
+
+
+
+
+maxlength & minlength: Sets input length limits.
+<input type="password" name="password" minlength="8" maxlength="20">

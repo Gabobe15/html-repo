@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition & Animation</title>
+    <style>
+        .animated-box {
+            width: 50%;
+            height: 50px;
+            background-color: #9b59b6;
+            transition: transform 0.3s ease;
+            margin: 250px auto;
+        }
+
+        .animated-box:hover {
+            animation: color-change 1s ease infinite;
+            transform: rotate(20deg);
+        }
+
+        @keyframes color-change {
+            0% {
+                background-color: #9b59b6;
+            }
+
+            50% {
+                background-color: #2ECC71
+            }
+
+            100% {
+                background-color: #9b59b6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animated-box">
+
+    </div>
+</body>
+
+</html>

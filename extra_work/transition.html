@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        main {
+            max-width: 400px;
+            margin: 100px auto;
+        }
+
+        .hover-over {
+            background-color: blue;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            outline: none;
+            font-size: 1.5rem;
+            transition: background-color 0.5s ease 1s, color 0.5s ease-in-out 1s, transform 0.5s ease-in 1s
+        }
+
+        .hover-over:hover {
+            background-color: black;
+            color: yellow;
+            transform: scale(2.5);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <button class="hover-over">Hover over me</button>
+    </main>
+</body>
+
+</html>
+
+
+<!-- Key Properties of Transitions
+
+transition-property
+
+Specifies the CSS property to animate.
+Example: background-color, transform, opacity.
+
+transition-duration
+
+Sets how long the transition takes (in seconds or milliseconds).
+Example: 0.5s, 200ms.
+
+transition-timing-function
+
+Determines the pace of the transition. Common values include:
+ease (default): Starts slow, speeds up, then slows down.
+linear: Constant speed.
+ease-in: Starts slow.
+ease-out: Ends slow.
+cubic-bezier: Custom timing curve.
+
+transition-delay
+
+Delays the start of the transition.
+Example: 1s.
+
+Shorthand Syntax
+Combine the above into a single line:
+
+transition: property duration timing-function delay;
+
+
+Example:
+
+transition: all 0.3s ease-in-out; -->

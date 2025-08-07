@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>experimental</title>
+</head>
+
+<body>
+    <main>
+        <div>
+            <button id="btn">Click me</button>
+        </div>
+    </main>
+</body>
+
+<script>
+    const btn = document.getElementById('btn')
+    const div = document.querySelector('div')
+    const main = document.querySelector('main')
+
+
+    main.onclick = function () {
+        console.log('you clicked on the main body')
+    }
+
+
+    div.onclick = function () {
+        console.log('You clicked on the div')
+    }
+
+    btn.onclick = function (e) {
+        console.log('you clicked on button')
+        e.stopPropagation()
+    }
+</script>
+
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress bar</title>
+    <style>
+        .progress-bar-container {
+            width: 300px;
+            height: 300px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 75%;
+            background-color: #2ecc71;
+            transition: width 0.3s ease-in-out
+        }
+
+        #progress-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-bar-container">
+        <div class="progress-bar-fill">
+            <span id="progress-number">0%</span>
+        </div>
+    </div>
+</body>
+<script>
+    const progressBar = document.querySelector('.progress-bar-fill')
+    const progressNumber = document.getElementById('progress-number');
+
+    let progress = 0
+    let intervalId = null;
+
+    function startProgress() {
+        if (intervalId !== null) {
+            clearInterval(intervalId);
+        }
+
+        progress = 0;
+        progressBar.style.width = '0%';
+        progressNumber.textContent = '0%';
+
+        intervalId = setInterval(() => {
+            progress += 5;
+
+            // Ensure progress doesn't go over 100
+            if (progress > 100) {
+                progress = 100;
+            }
+
+            progressBar.style.width = progress + '%';
+            progressNumber.textContent = progress + '%';
+
+            if (progress >= 100) {
+                // clearInterval(intervalId);
+                //intervalId = null;
+                progress = 0
+                console.log('Progress complete!');
+            }
+        }, 100);
+    }
+
+    startProgress(); // Call the function to start the progress bar
+
+
+
+    /*
+     const interval = setInterval(() => {
+        progress += 5
+
+        progressBar.style.width = progress + '%'
+
+        if (progress >= 100) {
+            clearInterval(interval)
+            console.log('progress completed !')
+        }
+
+    }, 100)
+    */
+
+    /*
+    const interval = setInterval(() => {
+
+        if (progress >= 100) {
+            progress = 0
+        }
+
+        progress += 5
+
+        progressBar.style.width = progress + '%'
+
+
+    }, 100)
+
+*/
+
+</script>
+
+</html>
